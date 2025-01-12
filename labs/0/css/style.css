@@ -4,10 +4,9 @@ body {
 
 #buttons-container {
     margin-top: 20px;
-    position: relative;
     display: flex;
-    gap: 10px;
     flex-wrap: wrap;
+    gap: 10px;
 }
 
 button {
@@ -17,11 +16,10 @@ button {
 }
 
 #create-buttons {
-    height: auto;
-    width: auto;
-    font-size: auto;
+    height: min-content;
+    width: min-content;
 }
 
-#error-message {
+#game-message {
     margin-top: 10px;
 }

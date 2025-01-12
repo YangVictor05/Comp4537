@@ -1,4 +1,4 @@
-// Button Class
+// Button Class attributed to ChatGPT
 class Button {
     constructor(label, color) {
         this.label = label;
@@ -28,7 +28,7 @@ class Button {
     }
 }
 
-// Button Manager Class
+// Button Manager Class attributed to ChatGPT
 class ButtonManager {
     constructor(container) {
         this.container = container;
@@ -87,7 +87,7 @@ class ButtonManager {
     }
 }
 
-// UI Class: Manages user interface interactions 
+// UI Class attributed to ChatGPT
 class UI {
     constructor() {
         this.labelPrompt = document.getElementById('num-buttons-label')

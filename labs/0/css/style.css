@@ -4,8 +4,9 @@ body {
 
 #buttons-container {
     margin-top: 20px;
-    display: flex;
-    flex-wrap: wrap;
+    position: relative;
+    width: 90vw;
+    height: 80vh;
     gap: 10px;
 }
 

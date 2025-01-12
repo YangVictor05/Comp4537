@@ -68,11 +68,12 @@ class ButtonManager {
     moveButtonsRandomly() {
         const buttonWidth = 160;
         const buttonHeight = 80; 
-        const extra = 2.5;
-
+        const extra = 1.5;
+        const containerHeight = this.container.offsetHeight;
+        const containerWidth = this.container.offsetWidth;
         this.buttons.forEach(button => {
-            const x = Math.random() * (window.innerWidth - buttonWidth * extra);
-            const y = Math.random() * (window.innerHeight - buttonHeight * extra);
+            const x = Math.random() * (containerWidth - buttonWidth * extra);
+            const y = Math.random() * (containerHeight - buttonHeight * extra);
             button.setPosition(x, y);
         });
     }

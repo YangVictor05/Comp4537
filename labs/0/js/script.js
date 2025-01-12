@@ -1,3 +1,13 @@
+// Code developed by Victor Yang for Lab 0
+// Assistance provided by ChatGPT (OpenAI) for class definitions.
+// Date: 1/12/2025
+
+/* 
+    This code implements a memory game using object-oriented principles.
+    The game creates buttons, scrambles them, and allows users to click them in a specific order.
+    The logic was assisted by ChatGPT for concepts such as object-oriented structure and random movement implementation.
+*/
+
 // Button Class attributed to ChatGPT
 class Button {
     constructor(label, color) {

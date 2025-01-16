@@ -4,5 +4,4 @@ const MESSAGES = {
     errorWrongOrder: "Wrong order!",
     successExcellentMemory: "Excellent memory!",
     start: 'Go!',
-    buttonClick: 'Button clicked!',
 }

@@ -1,3 +1,4 @@
+// NotesRetriever logic attributed to ChatGPT
 class NotesRetriever {
   constructor(containerId, retrievedTimeId) {
     this.notesContainer = document.getElementById(containerId);
@@ -30,7 +31,7 @@ class NotesRetriever {
   // Update the "last retrieved" time
   updateRetrievedTime() {
     const currentTime = new Date().toLocaleString();
-    this.lastRetrievedTime.textContent = `Last retrieved: ${currentTime}`;
+    this.lastRetrievedTime.textContent = `${messages.lastRetrievedTime} ${currentTime}`;
   }
 
   // Automatically retrieve notes every 2 seconds
@@ -39,5 +40,10 @@ class NotesRetriever {
   }
 }
 
+readerPage = document.getElementById('reader-page');
+readerPage.textContent = messages.rPage;
+
+backButton = document.getElementById('back');
+backButton.textContent = messages.back;
 // Instantiate the NotesRetriever
 const notesRetriever = new NotesRetriever('notes-container', 'last-retrieved-time');

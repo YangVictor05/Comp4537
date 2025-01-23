@@ -14,7 +14,6 @@ class NotesRetriever {
     backButton.textContent = messages.back;
     this.loadNotes();
     this.autoRetrieve();
-
     window.addEventListener('storage', (event) => {
       if (event.key === 'notes') {
         this.loadNotes();

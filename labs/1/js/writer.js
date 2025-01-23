@@ -47,6 +47,7 @@ class NotesApp {
   // Update a note's content
   updateNote(index, content) {
     this.notes[index] = content;
+    this.saveNotes();
   }
 
   // Add a new note

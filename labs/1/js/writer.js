@@ -11,10 +11,7 @@ class NotesApp {
 
   // Initialize the app
   init() {
-    writerPage = document.getElementById('writer-page');
-    writerPage.textContent = messages.wPage;
-    backButton = document.getElementById('back');
-    backButton.textContent = messages.back;
+
     this.loadNotes();
     this.addNoteButton.onclick = () => this.addNote();
     this.autoSave();
@@ -47,7 +44,6 @@ class NotesApp {
   // Update a note's content
   updateNote(index, content) {
     this.notes[index] = content;
-    this.saveNotes();
   }
 
   // Add a new note
@@ -77,5 +73,9 @@ class NotesApp {
   }
 }
 
+writerPage = document.getElementById('writer-page');
+writerPage.textContent = messages.wPage;
+backButton = document.getElementById('back');
+backButton.textContent = messages.back;
 // Instantiate the NotesApp
 const notesApp = new NotesApp('notes-container', 'add-note', 'last-saved-time');

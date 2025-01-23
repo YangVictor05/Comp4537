@@ -8,17 +8,8 @@ class NotesRetriever {
 
   // Initialize the retriever
   init() {
-    readerPage = document.getElementById('reader-page');
-    readerPage.textContent = messages.rPage;
-    backButton = document.getElementById('back');
-    backButton.textContent = messages.back;
     this.loadNotes();
     this.autoRetrieve();
-    window.addEventListener('storage', (event) => {
-      if (event.key === 'notes') {
-        this.loadNotes();
-      }
-    });
   }
 
   // Load notes from localStorage
@@ -48,6 +39,11 @@ class NotesRetriever {
     setInterval(() => this.loadNotes(), 2000);
   }
 }
+
+readerPage = document.getElementById('reader-page');
+readerPage.textContent = messages.rPage;
+backButton = document.getElementById('back');
+backButton.textContent = messages.back;
 
 // Instantiate the NotesRetriever
 const notesRetriever = new NotesRetriever('notes-container', 'last-retrieved-time');

@@ -8,11 +8,11 @@ const server = http.createServer((req, res) => {
     const pathname = parsedUrl.pathname;
 
     // Routing logic based on the pathname
-    if (pathname === '/getDate') {
+    if (pathname === '/COMP4537/labs/3/getDate') {
         routes.getDateRoute(req, res);  // Handle the getDate route
-    } else if (pathname === '/writeFile') {
+    } else if (pathname === '/COMP4537/labs/3/writeFile') {
         routes.writeFileRoute(req, res);  // Handle the writeFile route
-    } else if (pathname.startsWith('/readFile')) {
+    } else if (pathname.startsWith('/COMP4537/labs/3/readFile')) {
         routes.readFileRoute(req, res);  // Handle the readFile route
     } else {
         routes.routeNotFound(req, res);  // Handle unknown routes
@@ -20,5 +20,5 @@ const server = http.createServer((req, res) => {
 });
 
 server.listen(3000, () => {
-    console.log('Server running on http://localhost:3000');
+    console.log('Server is running on port 3000');
 });

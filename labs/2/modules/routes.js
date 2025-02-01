@@ -1,11 +1,12 @@
 const { getDate } = require('./utils');
-const { appendToFile, readFile } = require('./FileHandler');
 const messages = require('../lang/en/user');
+const FileHandler = require('./FileHandler');  // Import the FileHandler class
 const path = require('path');
 
 class Routes {
     constructor() {
         this.basePath = path.join(__dirname, '../data');  // Base directory for file operations
+        this.fileHandler = new FileHandler(this.basePath);  // Instantiate the FileHandler class
     }
 
     // Handler for the '/getDate' route
@@ -25,8 +26,8 @@ class Routes {
         const text = parsedUrl.searchParams.get('text') || '';
 
         if (text) {
-            const filePath = path.join(this.basePath, 'file.txt');  // Save to 'data/file.txt'
-            appendToFile(text, filePath, (success) => {
+            const fileName = 'file.txt';  // Save to 'data/file.txt'
+            this.fileHandler.appendToFile(text, fileName, (success) => {
                 if (success) {
                     res.writeHead(200, { 'Content-Type': 'text/plain' });
                     res.end(messages.messages.success);
@@ -45,9 +46,8 @@ class Routes {
     readFileRoute(req, res) {
         const parsedUrl = new URL(req.url, `http://${req.headers.host}`);
         const fileName = parsedUrl.pathname.split('/').pop() || 'file.txt';
-        const filePath = path.join(this.basePath, fileName);  // Read from 'data/file.txt'
 
-        readFile(filePath, (success, data) => {
+        this.fileHandler.readFile(fileName, (success, data) => {
             if (success) {
                 res.writeHead(200, { 'Content-Type': 'text/plain' });
                 res.end(`Contents of ${fileName}: \n\n${data}`);

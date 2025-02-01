@@ -77,5 +77,6 @@ writerPage = document.getElementById('writer-page');
 writerPage.textContent = messages.wPage;
 backButton = document.getElementById('back');
 backButton.textContent = messages.back;
+
 // Instantiate the NotesApp
 const notesApp = new NotesApp('notes-container', 'add-note', 'last-saved-time');
